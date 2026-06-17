@@ -1,15 +1,22 @@
 class Menu
 include Menu_Display
     def menu_print
+       previous_opt="abc"
+
         loop do
           print_menu
     
           option=gets.chomp.to_i
+           if option==previous_opt
+             puts "same option"
+             redo
+            end
+          previous_opt=option
           case option
           when 1
-          StudentService.list_students
+            StudentService.list_Students
           when 2
-            StudentService.view_top
+           StudentService.top_performer
           when 3
             StudentService.search_student
           when 4
@@ -19,7 +26,9 @@ include Menu_Display
           when 6
           puts "exit"
           break
-          return
+          else
+            puts "invalid"
+          
           end
       end
    end
