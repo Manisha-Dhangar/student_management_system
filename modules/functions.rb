@@ -37,14 +37,22 @@ module Function
       elsif percentage >= 85 && percentage < 90
         student_grade ="A"
       elsif percentage >= 75 && percentage < 85
-          student_grade ="B"
-            
-             elsif percentage >= 60 && percentage < 75
-             student_grade ="C"
-         
-              else
-             student_grade="D"            
-            end
-            student_grade
+        student_grade ="B"
+      elsif percentage >= 60 && percentage < 75
+        student_grade ="C"
+      else
+        student_grade="D"
+      end
+      student_grade
+    end
+    def add_hash_to_student(*keys)
+      student_hash={}
+     
+      for i in 0...keys.length
+         puts keys[i]
+        student_hash[:keys[i]]=keys[i]
+      end
+
+      student_hash
     end
 end
